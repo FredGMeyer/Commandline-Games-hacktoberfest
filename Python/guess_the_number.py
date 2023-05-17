@@ -10,7 +10,7 @@ def welcome():
     print(
         "In this game you have to guess a number and you will have total 5 chances to guess it correct"
         "\n"
-        "You guess should be in between 1 and 25"
+        "Your guess should be in between 1 and 25"
     )
 
 
@@ -20,22 +20,22 @@ def user_input():
     try:
         user_number = int(user_number)
     except:
-        print("Please ender a valid digit!")
+        print("Please enter a valid digit!")
         return user_input()
     else:
         if 1 <= user_number <= 25:
             return user_number
         else:
-            print("You need to enter a digit between 0 and 50")
+            print("You need to enter a digit between 0 and 25")
             return user_input()
 
 
 def success(count: int):
-    """Print the sucess message when user guess the correct number"""
+    """Print the success message when user guesses the correct number"""
     positions = ["1st", "2nd", "3rd", "4th", "5th"]
     print(
         colored(
-            f"Wow!\U0001F929, you have won the game in {positions[count-1]} try",
+            f"Wow!\U0001F929, you have won the game on your {positions[count-1]} try",
             "green",
         )
     )
